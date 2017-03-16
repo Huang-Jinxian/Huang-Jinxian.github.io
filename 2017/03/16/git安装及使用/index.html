@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://huang-jinxian.com/2017/03/16/git安装及使用/index.html">
 <meta property="og:site_name" content="Huang Jinxian的个人小站">
 <meta property="og:description" content="最近公司要从svn换到git上进行开发，虽然以前用过，但是细节的东西还是要记录一下的，方便自己以后查阅">
-<meta property="og:updated_time" content="2017-03-16T07:22:55.562Z">
+<meta property="og:updated_time" content="2017-03-16T07:41:35.075Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git安装及使用">
 <meta name="twitter:description" content="最近公司要从svn换到git上进行开发，虽然以前用过，但是细节的东西还是要记录一下的，方便自己以后查阅">
@@ -319,16 +319,27 @@
       
           
         <blockquote>
-<p>最近公司要从svn换到git上进行开发，虽然以前用过，但是细节的东西还是要记录一下的，方便自己以后查阅<br><a id="more"></a></p>
+<p>最近公司要从svn换到git上进行开发，虽然以前用过，但是细节的东西还是要记录一下的，方便自己以后查阅</p>
+</blockquote>
+<a id="more"></a>
 <ol>
 <li>下载并安装<a href="https://git-scm.com/download/win" target="_blank" rel="external">git客户端</a> 。</li>
 <li>在桌面上找到gitbash双击或者鼠标右键选择gitbash选项，打开gitbash窗口。</li>
-<li>设置git的全局变量user.name和user.email<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"xuhaiyan"</span></div><div class="line">$ git config --global user.email <span class="string">"haiyan.xu.vip@gmail.com"</span></div></pre></td></tr></table></figure>
+<li><p>设置git的全局变量user.name和user.email</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"your name"</span></div><div class="line">$ git config --global user.email <span class="string">"your email"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>进入user文件夹下查看本地是否已经存在.ssh文件夹,里面是否存在id_rsa和id_rsa.pub两个文件，也可以用下面命令查看。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/.ssh</div><div class="line">$ ls</div></pre></td></tr></table></figure>
 </li>
 </ol>
-</blockquote>
+<p>若文件存在，则备份、删除文件或者改名。</p>
 <ol>
-<li>进入user文件夹下查看本地是否已经存在.ssh文件夹，</li>
+<li>生成本地的ssh密钥<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"your email"</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>命令执行之后，再按下回车会提示输入密码，若直接回车则密码为空，也可以自己输入密码（密码不可见），再回车之后确认密码，则密钥生成完成。</p>
+<ol>
+<li>复制id_rsa.pub中的内容，粘贴到github、码云等。</li>
 </ol>
 
       
@@ -341,7 +352,7 @@
         <p><span>本文标题:</span><a href="/2017/03/16/git安装及使用/">git安装及使用</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">Huang Jinxian</a></p>
         <p><span>发布时间:</span>2017-03-16, 13:11:26</p>
-        <p><span>最后更新:</span>2017-03-16, 15:22:55</p>
+        <p><span>最后更新:</span>2017-03-16, 15:41:35</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/03/16/git安装及使用/" title="git安装及使用">http://huang-jinxian.com/2017/03/16/git安装及使用/</a>
             <span class="copy-path" data-clipboard-text="原文: http://huang-jinxian.com/2017/03/16/git安装及使用/　　作者: Huang Jinxian" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
